@@ -93,10 +93,19 @@
             </p>
           </div>
           <div class="margin-bottom-xs position-relative">
-          <video id="video1" width="100%"   poster="/assets/thumbnail.png" >
-            <source src="https://streamable.com/290w2u" type="video/mp4">
+
+          <!-- <video id="video1" width="100%"   poster="/assets/thumbnail.png" >
+            <source src="https://streamable.com/e/290w2u" type="video/mp4">
           Your browser does not support the video tag.
-          </video>
+          </video> -->
+
+          <div style="width:100%;height:0px;position:relative;padding-bottom:52.656%;">
+            <iframe id="video1" src="https://streamable.com/e/290w2u"  width="100%" height="100%"  style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe>
+          </div>
+
+          <!-- <div style="width:100%;height:0px;position:relative;padding-bottom:52.656%;"><iframe src="https://streamable.com/e/290w2u?nocontrols=1" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div> -->
+
+
           <div class="position-absolute width-100% height-100% flex flex-center top-0 left-0 paly-btn cursor-pointer"  video="video1">
             <img class="play-icon"  video="video1" src="/assets/playicon.png" alt="">
           </div>
@@ -119,6 +128,7 @@
             </p>
           </div>
 
+          
         
           <!-- product 1 -->
 
@@ -439,19 +449,30 @@
     <script>
       
 
+      function playVideo(win) {
+  win.postMessage("playVideo", theURL);
+}
+
+function pauseVideo(win) {
+  win.postMessage("pauseVideo", theURL);
+}
+
+var theProtocol = location.protocol,
+  theURL ="https://streamable.com/e/290w2u";
 
 document.querySelectorAll('.paly-btn').forEach(item => {
   item.addEventListener('click', event => {
     let videoId = event.target.getAttribute('video')
     let video = document.getElementById(videoId);
+    win = video.contentWindow;
     console.log( event.target.querySelector('.play-icon'))
-    if (video.paused)
+    if (win.paused)
     {
-        video.play(); 
+        win.postMessage("playVideo", theURL);
         event.target.querySelector('.play-icon').style.display = 'none';
     }
     else{ 
-        video.pause();
+        win.postMessage("pauseVideo", theURL);
         event.target.querySelector('.play-icon').style.display = 'block';
     }
   })
@@ -462,13 +483,14 @@ document.querySelectorAll('.play-icon').forEach(item => {
     event.stopPropagation();
     let videoId = event.target.getAttribute('video')
     let video = document.getElementById(videoId);
+    win = video.contentWindow;
     if (video.paused)
-    {
-        video.play(); 
+    {  
+       win.postMessage("playVideo", theURL);
         event.target.style.display = 'none';
     }
     else{ 
-        video.pause();
+      win.postMessage("pauseVideo", theURL);
         event.target.style.display = 'block';
     }
   })
