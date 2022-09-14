@@ -10165,10 +10165,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 {
 	font-family: ITCCondensed;
 }
-.font-0
-{
-	font-size: 0;
-}
+
 
 .large-heading{
 	font-size: 128px;
@@ -10214,6 +10211,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 @media (min-width: 64rem)
 {
+	.font-0
+{
+	font-size: 0;
+}
 	.width-50md {
 		width: 50%;
 	}
@@ -10256,6 +10257,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 	.btn
 	{
 		width: 100%;
+		max-width: 300px;
+		margin: auto;
 	}
 
 	.collaboration_date
