@@ -10225,6 +10225,9 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 @media (max-width: 63.938rem)
 {
+	.swiper-pagination {
+		bottom: -4px !important;
+	}
 
 	.padding-y-llg {
 		padding-top: calc(1.185 * var(--space-llg) ) ;
