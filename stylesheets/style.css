@@ -10165,6 +10165,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 {
 	font-family: ITCCondensed;
 }
+.font-0
+{
+	font-size: 0;
+}
 
 .large-heading{
 	font-size: 128px;
