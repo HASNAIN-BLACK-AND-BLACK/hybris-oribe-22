@@ -10204,6 +10204,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
  width: fit-content;
 }
 
+.text-400 {
+	font-weight: 400;
+}
+
 @media (min-width: 64rem)
 {
 	.width-50md {
@@ -10310,5 +10314,9 @@ img.play-icon {
     max-width: 46px;
 }
 
+.mobile_break
+{
+	display: block ;
+}
 
 }
