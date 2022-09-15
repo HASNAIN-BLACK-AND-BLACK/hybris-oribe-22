@@ -10147,6 +10147,9 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 #mainContent {
     background: url(/assets/mainbackground.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+
 }
 .break-word
 {
